@@ -1,6 +1,21 @@
+'use client';
 import Image from "next/image";
+import { useCountStore } from "@/store/use-count";
+import { useCommonStore } from "@/store/common-store";
+import en from "@/i18n/en.json";
+import zh from "@/i18n/zh.json";
+
+const translations = {
+  en,
+  zh,
+};
 
 export default function Home() {
+  const { count, increment, decrement } = useCountStore();
+  const { language, setLanguage } = useCommonStore();
+
+  const t = translations[language];
+
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -49,6 +64,40 @@ export default function Home() {
           >
             Read our docs
           </a>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h1 className="text-4xl font-bold">{t.greeting}</h1>
+          <div className="flex gap-4">
+            <button
+              className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto"
+              onClick={() => setLanguage('en')}
+            >
+              English
+            </button>
+            <button
+              className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto"
+              onClick={() => setLanguage('zh')}
+            >
+              Chinese
+            </button>
+          </div>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h1 className="text-4xl font-bold">{count}</h1>
+          <div className="flex gap-4">
+            <button
+              className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto"
+              onClick={increment}
+            >
+              Increment
+            </button>
+            <button
+              className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto"
+              onClick={decrement}
+            >
+              Decrement
+            </button>
+          </div>
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
