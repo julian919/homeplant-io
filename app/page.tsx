@@ -2,19 +2,12 @@
 import Image from "next/image";
 import { useCountStore } from "@/store/use-count";
 import { useCommonStore } from "@/store/common-store";
-import en from "@/i18n/en.json";
-import zh from "@/i18n/zh.json";
-
-const translations = {
-  en,
-  zh,
-};
+import { useTranslations } from "@/hooks/use-translations";
 
 export default function Home() {
   const { count, increment, decrement } = useCountStore();
-  const { language, setLanguage } = useCommonStore();
-
-  const t = translations[language];
+  const { setLanguage } = useCommonStore();
+  const t = useTranslations();
 
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
@@ -150,3 +143,4 @@ export default function Home() {
     </div>
   );
 }
+
