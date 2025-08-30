@@ -1,0 +1,11 @@
+@mixin body1 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+@mixin body2 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
