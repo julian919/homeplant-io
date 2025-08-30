@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useCommonStore } from '@/store/common-store';
+import { useCommonStore } from '@/store/common';
 
 export function useTranslations() {
   const { language } = useCommonStore();
