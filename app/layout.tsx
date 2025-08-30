@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Lato } from "next/font/google";
+import { Geist } from "next/font/google";
 import "@/assets/scss/globals.scss";
 
 const geist = Geist({
