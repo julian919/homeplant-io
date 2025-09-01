@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useCommonStore } from '@/store/common';
 
 export function useTranslations() {
@@ -13,5 +13,12 @@ export function useTranslations() {
     loadTranslations();
   }, [language]);
 
-  return translations;
+  const t = useCallback(
+    (key: string): string => {
+      return translations[key] ?? '';
+    },
+    [translations]
+  );
+
+  return t;
 }

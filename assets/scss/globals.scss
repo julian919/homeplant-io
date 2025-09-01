@@ -7,10 +7,6 @@
 body {
   // font-family: var(--font-lato);
   @include fonts.body2;
-  // background: var(--background);
+  background: #F9F8F4;
   // color: var(--foreground);
-}
-
-h1 {
-  color: colors.$primary-color;
 }
