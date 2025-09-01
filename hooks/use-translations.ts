@@ -3,7 +3,7 @@ import { useCommonStore } from '@/store/common';
 
 export function useTranslations() {
   const { language } = useCommonStore();
-  const [translations, setTranslations] = useState<any>({});
+  const [translations, setTranslations] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
     const loadTranslations = async () => {
