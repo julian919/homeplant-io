@@ -16,18 +16,23 @@ export default function Home() {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.imageContainer}>
-        <Carousel images={carouselImages} />
+        <Carousel
+          images={carouselImages}
+          className={styles.carouselContainer}
+          hideArrow={true}
+        />
       </div>
       <div className={styles.contentContainer}>
         <div>
-            <h1 className="text-3xl font-serif text-gray-800">{t('home.title')}</h1>
-            <p className="text-gray-500 mt-4">{t('home.subtitle')}</p>
-            <PrimaryButton>
+          <h1 className="text-3xl font-serif text-gray-800">
+            {t('home.title')}
+          </h1>
+          <p className="text-gray-500 mt-4">{t('home.subtitle')}</p>
+          <PrimaryButton>
             <p>{t('get_started')}</p>
-            </PrimaryButton>
+          </PrimaryButton>
         </div>
       </div>
     </div>
   );
 }
-

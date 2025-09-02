@@ -1,0 +1,31 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: transparent;
+  color: $white; // This makes the icon stroke white
+
+  .hamburgerButton {
+    padding: 0.5rem;
+    border-radius: 9999px;
+    background-color: $primary-color;
+    transition: filter 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(110%); // Use brightness for hover effect
+    }
+  }
+
+  &.scrolled {
+    background-color: $white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    // The hamburger button's style doesn't change, so it remains a solid color button
+    // The icon color is inherited from the .header rule, so it remains white
+  }
+}

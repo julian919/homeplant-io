@@ -1,12 +1,6 @@
-@use "@/assets/scss/colors";
-@use "@/assets/scss/fonts";
-@use "tailwindcss" as *;
-
-
+@use 'tailwindcss' as *;
 
 body {
-  // font-family: var(--font-lato);
-  @include fonts.body2;
-  background: #F9F8F4;
-  // color: var(--foreground);
+  @include body2;
+  background: $light-green;
 }

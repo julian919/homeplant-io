@@ -7,9 +7,15 @@ import Slide from './Slide';
 
 interface CarouselProps {
   images: string[];
+  className?: string;
+  hideArrow?: boolean;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ images }) => {
+const Carousel: React.FC<CarouselProps> = ({
+  images,
+  className,
+  hideArrow,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -44,7 +50,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   };
 
   return (
-    <div className={styles.carouselContainer}>
+    <div className={`${styles.carouselContainer} ${className || ''}`.trim()}>
       <div
         className={styles.carouselTrack}
         ref={trackRef}
@@ -54,8 +60,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
           <Slide key={index} image={image} index={index} />
         ))}
       </div>
-      <Arrow direction="left" onClick={prevSlide} />
-      <Arrow direction="right" onClick={nextSlide} />
+      {!hideArrow && (
+        <>
+          <Arrow direction="left" onClick={prevSlide} />
+          <Arrow direction="right" onClick={nextSlide} />
+        </>
+      )}
       <Dots images={images} currentIndex={currentIndex} onClick={goToSlide} />
     </div>
   );
