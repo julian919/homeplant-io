@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [new URL('https://res.cloudinary.com/**')],
   },
   sassOptions: {
-    additionalData: `@use '@/assets/scss/colors.scss' as *;@use '@/assets/scss/fonts.scss' as *;`,
+    additionalData: `@use '@/assets/scss/colors.scss' as *;@use '@/assets/scss/fonts.scss' as *;@use '@/assets/scss/dimens.scss' as *;`,
   },
 };
 
