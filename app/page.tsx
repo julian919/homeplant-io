@@ -1,11 +1,11 @@
-'use client';
 import Carousel from '@/components/common/carousel/Carousel';
-import styles from './page.module.scss';
+import styles from '@/app/page.module.scss';
 import PrimaryButton from '@/components/common/buttons/PrimaryButton';
-import { useTranslations } from '@/hooks/use-translations';
+import { getI18n } from '@/utils/translations';
 
-export default function Home() {
-  const t = useTranslations();
+export default async function Home() {
+  const t = await getI18n();
+
   const carouselImages = [
     'https://res.cloudinary.com/dik1cnvbo/image/upload/v1756732935/Gemini_Generated_Image_mma08xmma08xmma0_puboep.webp',
     'https://res.cloudinary.com/dik1cnvbo/image/upload/v1756732927/Gemini_Generated_Image_pvo2dwpvo2dwpvo2_wfmzsp.webp',

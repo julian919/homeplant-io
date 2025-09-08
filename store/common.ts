@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import Cookies from 'js-cookie';
 
 interface CommonState {
   language: 'en' | 'zh';
@@ -7,5 +8,8 @@ interface CommonState {
 
 export const useCommonStore = create<CommonState>((set) => ({
   language: 'en',
-  setLanguage: (language) => set({ language }),
+  setLanguage: (language) => {
+    Cookies.set('locale', language, { expires: 365, path: '/', sameSite: 'Lax' });
+    set({ language });
+  },
 }));
