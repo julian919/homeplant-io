@@ -25,9 +25,9 @@ export default async function Home() {
       <div className={styles.contentContainer}>
         <div>
           <h1 className="text-3xl font-serif text-gray-800">
-            {t('home.title')}
+            {t('home_title')}
           </h1>
-          <p className="text-gray-500 mt-4">{t('home.subtitle')}</p>
+          <p className="text-gray-500 mt-4">{t('home_subtitle')}</p>
           <PrimaryButton>
             <p>{t('get_started')}</p>
           </PrimaryButton>

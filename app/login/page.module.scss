@@ -1,0 +1,54 @@
+.title {
+  @include title1;
+  margin-bottom: 1rem;
+  color: $primary-color;
+}
+
+.label {
+  @include body2;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: $primary-color;
+}
+
+.input {
+  @include body2;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid $primary-color;
+  border-radius: 0.25rem;
+  background-color: $light-green;
+  color: $primary-color;
+}
+
+.signupText {
+  @include body2;
+  margin-top: 1rem;
+  text-align: center;
+  color: $primary-color;
+
+  a {
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}
+
+.imageContainer {
+  @include mobileView {
+    display: none;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,7 +1,11 @@
 {
   "get_started": "Get Started",
-  "greeting": "Hello, World!",
-  "home.plant_alt": "Monstera plant",
-  "home.subtitle": "Effortlessly track, water, and nurture your green companions",
-  "home.title": "A new way to care for your plants"
+  "home_plant_alt": "Monstera plant",
+  "home_subtitle": "Effortlessly track, water, and nurture your green companions",
+  "home_title": "A new way to care for your plants",
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "login_signup_text": "Don't have an account?",
+  "signup_link": "Sign up"
 }
