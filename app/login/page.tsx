@@ -1,4 +1,5 @@
 import PrimaryButton from '@/components/common/buttons/PrimaryButton';
+import PrimaryInput from '@/components/common/inputs/PrimaryInput';
 import styles from './page.module.scss';
 import { getI18n } from '@/utils/translations';
 
@@ -6,7 +7,7 @@ export default async function LoginPage() {
   const t = await getI18n();
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-full">
       <div
         className={`hidden lg:block lg:flex-1 bg-cover bg-center ${styles.imageContainer} ${styles['fade-in']}`}
         style={{
@@ -26,19 +27,25 @@ export default async function LoginPage() {
             className={`mb-6 ${styles['fade-in']}`}
             style={{ animationDelay: '0.6s' }}
           >
-            <label htmlFor="email" className={styles.label}>
-              {t('email')}
-            </label>
-            <input type="email" id="email" className={styles.input} />
+            <PrimaryInput
+              id="email"
+              name="email"
+              type="email"
+              label={t('email')}
+              placeholder={t('email')}
+            />
           </div>
           <div
             className={`mb-6 ${styles['fade-in']}`}
             style={{ animationDelay: '0.8s' }}
           >
-            <label htmlFor="password" className={styles.label}>
-              {t('password')}
-            </label>
-            <input type="password" id="password" className={styles.input} />
+            <PrimaryInput
+              id="password"
+              name="password"
+              type="password"
+              label={t('password')}
+              placeholder={t('password')}
+            />
           </div>
           <div
             className={`mt-8 ${styles['fade-in']}`}

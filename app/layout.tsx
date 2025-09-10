@@ -31,13 +31,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
         suppressHydrationWarning={true}
-        className={`${geist.className} antialiased bg-[#F9F8F4] min-h-screen`}
+        className={`${geist.className} antialiased bg-[#F9F8F4] h-full flex flex-col`}
       >
         <Header />
-        <main>{children}</main>
+        <main className="flex-grow">{children}</main>
       </body>
     </html>
   );
