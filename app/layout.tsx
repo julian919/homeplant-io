@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
 import '@/assets/scss/globals.scss';
-
 import Header from '@/components/common/Header';
+import { getLocale, getTranslations } from '@/utils/translations';
+import { I18nClientProvider } from '@/components/common/I18nClientProvider';
 
 const geist = Geist({
   subsets: ['latin'],
 });
+
 export const metadata: Metadata = {
   title: 'Homeplant IO',
   description: 'Your personal guide to home plant care.',
@@ -25,19 +27,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const translations = await getTranslations(locale);
+
   return (
-    <html lang="en" className="h-full">
+    <html lang={locale} className="h-full">
       <body
         suppressHydrationWarning={true}
         className={`${geist.className} antialiased bg-[#F9F8F4] h-full flex flex-col`}
       >
-        <Header />
-        <main className="flex-grow">{children}</main>
+        <I18nClientProvider translations={translations}>
+          <Header />
+          <main className="flex-grow">{children}</main>
+        </I18nClientProvider>
       </body>
     </html>
   );

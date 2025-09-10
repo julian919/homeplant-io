@@ -7,5 +7,14 @@
   "password": "密码",
   "login": "登录",
   "login_signup_text": "没有账号？",
-  "signup_link": "注册"
+  "signup_link": "注册",
+  "register": "注册",
+  "username": "用户名",
+  "register_login_text": "已有账户？",
+  "login_link": "登录",
+  "create_account": "创建账户",
+  "username_placeholder": "请输入您的用户名",
+  "password_placeholder": "请输入您的密码",
+  "username_min_length_error": "用户名至少需要3个字符。",
+  "password_min_length_error": "密码至少需要8个字符。"
 }

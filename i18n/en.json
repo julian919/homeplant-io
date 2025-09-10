@@ -7,5 +7,14 @@
   "password": "Password",
   "login": "Login",
   "login_signup_text": "Don't have an account?",
-  "signup_link": "Sign up"
+  "signup_link": "Sign up",
+  "register": "Register",
+  "username": "Username",
+  "register_login_text": "Already have an account?",
+  "login_link": "Log in",
+  "create_account": "Create Account",
+  "username_placeholder": "Enter your username",
+  "password_placeholder": "Enter your password",
+  "username_min_length_error": "Username must be at least 3 characters.",
+  "password_min_length_error": "Password must be at least 8 characters."
 }
