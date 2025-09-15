@@ -27,11 +27,24 @@ export const metadata: Metadata = {
   },
 };
 
+import dbConnect from '@/lib/mongodb';
+
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  try {
+    await dbConnect();
+    console.log('****************************************');
+    console.log('* MongoDB connection successful on startup *');
+    console.log('****************************************');
+  } catch (error) {
+    console.error('****************************************');
+    console.error('* MongoDB connection FAILED on startup: *', error);
+    console.error('****************************************');
+  }
+
   const locale = await getLocale();
   const translations = await getTranslations(locale);
 

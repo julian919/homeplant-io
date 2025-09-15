@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.6.1",
+    "@getbrevo/brevo": "^3.0.1",
     "@hookform/resolvers": "^5.2.1",
     "js-cookie": "^3.0.5",
+    "mongoose": "^8.18.1",
     "next": "15.5.2",
     "next-intl": "^4.3.5",
     "react": "19.1.0",
